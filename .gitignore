@@ -1,0 +1,6 @@
+result*
+cli
+.pecl-purifier/
+__pycache__/
+*.pyc
+*.log

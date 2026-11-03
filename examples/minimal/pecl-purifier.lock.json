@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "purifier": "pecl",
+  "sdk": "a28c9049d689ec1b3afb346b5c1343ec87037b773d7f87462d3c2cf1ba43bc33",
+  "abi": {
+    "php": "8.5.12",
+    "zts": false,
+    "debug": false,
+    "php_api": 20250925,
+    "zend_mod_api": 20250925,
+    "zend_ext_api": 420250925,
+    "modules": {
+      "Core": "8.5.12",
+      "PDO": "8.5.12",
+      "PDO_ODBC": "8.5.12",
+      "Phar": "8.5.12",
+      "Reflection": "8.5.12",
+      "SPL": "8.5.12",
+      "SimpleXML": "8.5.12",
+      "Zend OPcache": "8.5.12",
+      "bcmath": "8.5.12",
+      "calendar": "8.5.12",
+      "ctype": "8.5.12",
+      "curl": "8.5.12",
+      "date": "8.5.12",
+      "dom": "20031129",
+      "exif": "8.5.12",
+      "fileinfo": "8.5.12",
+      "filter": "8.5.12",
+      "ftp": "8.5.12",
+      "gd": "8.5.12",
+      "gettext": "8.5.12",
+      "gmp": "8.5.12",
+      "hash": "8.5.12",
+      "iconv": "8.5.12",
+      "intl": "8.5.12",
+      "json": "8.5.12",
+      "ldap": "8.5.12",
+      "lexbor": "8.5.12",
+      "libxml": "8.5.12",
+      "mbstring": "8.5.12",
+      "mysqli": "8.5.12",
+      "mysqlnd": "mysqlnd 8.5.12",
+      "openssl": "8.5.12",
+      "pcntl": "8.5.12",
+      "pcre": "8.5.12",
+      "pdo_mysql": "8.5.12",
+      "pdo_pgsql": "8.5.12",
+      "pdo_sqlite": "8.5.12",
+      "pgsql": "8.5.12",
+      "posix": "8.5.12",
+      "random": "8.5.12",
+      "readline": "8.5.12",
+      "session": "8.5.12",
+      "soap": "8.5.12",
+      "sockets": "8.5.12",
+      "sodium": "8.5.12",
+      "sqlite3": "8.5.12",
+      "standard": "8.5.12",
+      "sysvsem": "8.5.12",
+      "tokenizer": "8.5.12",
+      "uri": "8.5.12",
+      "xml": "8.5.12",
+      "xmlreader": "8.5.12",
+      "xmlwriter": "8.5.12",
+      "zip": "1.22.8",
+      "zlib": "8.5.12"
+    }
+  },
+  "project": {
+    "name": "purifierproof",
+    "channel": "pecl.php.net",
+    "version": "0.1.0",
+    "type": "extsrc",
+    "state": "stable",
+    "extension": "purifierproof",
+    "dependencies": {
+      "required": {
+        "php": {
+          "min": "8.1.0"
+        },
+        "pearinstaller": {
+          "min": "1.10.0"
+        },
+        "package": [
+          {
+            "name": "yaml",
+            "channel": "pecl.php.net",
+            "min": "2.3.0"
+          },
+          {
+            "name": "msgpack",
+            "channel": "pecl.php.net",
+            "min": "3.0.0"
+          }
+        ]
+      }
+    },
+    "date": "2026-11-03",
+    "time": "00:00:00"
+  },
+  "requirements": [],
+  "extraInputs": [],
+  "inputs": {
+    "package.xml": {
+      "content": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<package packagerversion=\"1.10.18\" version=\"2.0\"\n xmlns=\"http://pear.php.net/dtd/package-2.0\"\n xmlns:tasks=\"http://pear.php.net/dtd/tasks-1.0\"\n xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n xsi:schemaLocation=\"http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd\">\n <name>purifierproof</name>\n <channel>pecl.php.net</channel>\n <summary>Native PHP purifier proof</summary>\n <description>Native PHP extension and dependency consumer proof.</description>\n <lead><name>the nix-purifier developers</name><user>purifierproof</user><email>purifierproof@example.invalid</email><active>yes</active></lead>\n <date>2026-11-03</date><time>00:00:00</time>\n <version><release>0.1.0</release><api>0.1.0</api></version>\n <stability><release>stable</release><api>stable</api></stability>\n <license uri=\"https://opensource.org/license/mit\">MIT</license>\n <notes>Native source package proof.</notes>\n <contents><dir name=\"/\">\n <file name=\"config.m4\" role=\"src\"/>\n <file name=\"purifierproof.c\" role=\"src\"/>\n <file name=\"test.php\" role=\"test\"/>\n </dir></contents>\n <dependencies><required>\n <php><min>8.1.0</min></php><pearinstaller><min>1.10.0</min></pearinstaller>\n <package><name>yaml</name><channel>pecl.php.net</channel><min>2.3.0</min></package>\n <package><name>msgpack</name><channel>pecl.php.net</channel><min>3.0.0</min></package>\n </required></dependencies>\n <providesextension>purifierproof</providesextension>\n <extsrcrelease/>\n</package>\n",
+      "sha256": "53c8ed829f61244fedc2d27034f7d72bb63db6898a14ddbe9fb98502bc8332e8"
+    }
+  },
+  "nodes": [
+    {
+      "name": "yaml",
+      "entry": "archives/yaml/2.3.0.tgz",
+      "native": {
+        "name": "yaml",
+        "channel": "pecl.php.net",
+        "version": "2.3.0",
+        "type": "extsrc",
+        "state": "stable",
+        "extension": "yaml",
+        "dependencies": {
+          "required": {
+            "php": {
+              "min": "7.1.0"
+            },
+            "pearinstaller": {
+              "min": "1.4.0b1"
+            }
+          },
+          "optional": {
+            "extension": {
+              "name": "date"
+            }
+          }
+        },
+        "date": "2025-11-12",
+        "time": "02:22:12"
+      },
+      "dependencies": []
+    },
+    {
+      "name": "msgpack",
+      "entry": "archives/msgpack/3.0.1.tgz",
+      "native": {
+        "name": "msgpack",
+        "channel": "pecl.php.net",
+        "version": "3.0.1",
+        "type": "extsrc",
+        "state": "stable",
+        "extension": "msgpack",
+        "dependencies": {
+          "required": {
+            "php": {
+              "min": "7.0.0"
+            },
+            "pearinstaller": {
+              "min": "1.4.3"
+            }
+          }
+        },
+        "date": "2026-06-01",
+        "time": "11:51:57"
+      },
+      "dependencies": []
+    }
+  ],
+  "entries": [
+    {
+      "path": "archives/yaml/2.3.0.tgz",
+      "url": "https://pecl.php.net/get/yaml-2.3.0.tgz",
+      "hash": "sha256-vIQEgHo6TciWsxCvIaf4BjqiOEJP938n62/6iLWHS4o=",
+      "mirrors": []
+    },
+    {
+      "path": "archives/msgpack/3.0.1.tgz",
+      "url": "https://pecl.php.net/get/msgpack-3.0.1.tgz",
+      "hash": "sha256-4wvjVat5qupFaGkvvWBz/Xx/UOqNPPEu3OQPwMkh2Gg=",
+      "mirrors": []
+    }
+  ]
+}

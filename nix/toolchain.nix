@@ -1,0 +1,42 @@
+{
+  symlinkJoin,
+  php,
+  gcc,
+  pkg-config,
+  autoconf,
+  automake,
+  libtool,
+  gnumake,
+  re2c,
+  coreutils,
+  gawk,
+  gnused,
+  gnugrep,
+  findutils,
+  diffutils,
+  binutils,
+  gnutar,
+  gzip,
+}:
+symlinkJoin {
+  name = "pecl-toolchain";
+  paths = [
+    php.unwrapped.dev
+    gcc
+    pkg-config
+    autoconf
+    automake
+    libtool
+    gnumake
+    re2c
+    coreutils
+    gawk
+    gnused
+    gnugrep
+    findutils
+    diffutils
+    binutils
+    gnutar
+    gzip
+  ];
+}
