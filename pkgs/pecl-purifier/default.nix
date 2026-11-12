@@ -16,12 +16,12 @@
 stdenvNoCC.mkDerivation {
   pname = "pecl-purifier";
   version = "0.1.0";
-  src = ../.;
+  src = ../..;
   nativeBuildInputs = [ makeWrapper ];
   dontBuild = true;
   installPhase = ''
     mkdir -p "$out/bin" "$out/lib/pecl-purifier"
-    cp -r pecl_purifier nix "$out/lib/pecl-purifier/"
+    cp -r pecl_purifier nix lib-overlays pkgs "$out/lib/pecl-purifier/"
     install -m755 bin/pecl-purifier "$out/bin/pecl-purifier"
     substituteInPlace "$out/lib/pecl-purifier/nix/realize.nix" --replace-fail '@nixpkgs@' '${nixpkgsSrc}' --replace-fail '@purifier@' '${purifierSrc}'
     wrapProgram "$out/bin/pecl-purifier" \

@@ -19,7 +19,7 @@
 let
   checked = purifier.checkLock lock;
   data = checked.data;
-  helpers = ../pecl_purifier;
+  helpers = ../../pecl_purifier;
   tree = purifier.tree (
     {
       name = "pecl-fixed-sources";

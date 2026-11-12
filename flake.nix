@@ -28,11 +28,11 @@
             nixpkgsSrc = nixpkgs;
             inherit (final) lib php;
           };
-          cli = scope.callPackage ./nix/cli.nix {
+          cli = scope.callPackage ./pkgs/pecl-purifier/default.nix {
             nixpkgsSrc = nixpkgs;
             purifierSrc = purifier;
           };
-          buildPeclProject = scope.callPackage ./nix/build-project.nix {
+          buildPeclProject = scope.callPackage ./pkgs/build-pecl-project/default.nix {
             purifier = import (purifier + "/nix/lib") { inherit (final) lib; };
           };
         });
@@ -57,7 +57,7 @@
           meta.description = "Lock native PHP extensions";
         };
       });
-      lib.pecl-purifier.readLock = import ./nix/read-lock.nix { lib = nixpkgs.lib; };
+      lib.pecl-purifier = import ./lib-overlays/default { lib = nixpkgs.lib; };
       checks = forAll (
         system:
         let

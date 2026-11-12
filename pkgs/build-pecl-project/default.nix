@@ -24,7 +24,7 @@
   buildCommand ? "",
 }:
 let
-  lock = purifier.checkLock (import ./read-lock.nix { inherit lib; } { inherit src lockFile; });
+  lock = purifier.checkLock (import ../../lib-overlays/default/read-lock.nix { inherit lib; } { inherit src lockFile; });
   prepared =
     import ./environment.nix
       (builtins.removeAttrs scope [
@@ -41,7 +41,7 @@ let
           ;
       };
   environment = prepared.output;
-  helpers = ../pecl_purifier;
+  helpers = ../../pecl_purifier;
   source = lib.cleanSourceWith {
     inherit src;
     filter =
