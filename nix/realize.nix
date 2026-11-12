@@ -19,7 +19,7 @@ let
     inherit (pkgs) lib;
   };
   build =
-    pkgs.callPackage ./build-project.nix
+    pkgs.callPackage ../pkgs/build-pecl-project/default.nix
       {
         inherit
           php
