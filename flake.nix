@@ -69,6 +69,15 @@
         in
         {
           inherit (build.packages) environment project;
+          composer-platform = import ./tests/composer-platform.nix {
+            inherit pkgs;
+            projection = build.projections.php-extension;
+            originalPhp = pkgs.php;
+            testProgram = ./examples/minimal/test.php;
+          };
+          php-sdk-mismatch =
+            assert !(builtins.tryEval (build.projections.php-extension.applyTo pkgs.php84).drvPath).success;
+            pkgs.runCommand "pecl-wrong-php-sdk-control" { } "touch $out";
           release = build.release;
           cli = self.packages.${system}.default;
         }

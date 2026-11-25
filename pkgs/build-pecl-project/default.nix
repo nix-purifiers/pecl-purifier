@@ -24,7 +24,9 @@
   buildCommand ? "",
 }:
 let
-  lock = purifier.checkLock (import ../../lib-overlays/default/read-lock.nix { inherit lib; } { inherit src lockFile; });
+  lock = purifier.checkLock (
+    import ../../lib-overlays/default/read-lock.nix { inherit lib; } { inherit src lockFile; }
+  );
   prepared =
     import ./environment.nix
       (builtins.removeAttrs scope [
@@ -123,6 +125,13 @@ let
           ${lib.optionalString doCheck checkCommand}
           cp ${environment}/php.ini "$out/php.ini"
         '';
+  projections = lib.optionalAttrs (lock.data.project != null) {
+    php-extension = import ./php-extension-projection.nix { inherit lib php; } {
+      inherit project;
+      inherit (prepared) modules;
+      lock = lock.data;
+    };
+  };
   release =
     runCommand "pecl-native-release"
       {
@@ -167,6 +176,6 @@ assert lib.assertMsg (lock.data.sdk == sdkVersion) "PHP SDK changed; update the 
     inherit project environment;
   };
   tests = project;
-  inherit release;
+  inherit release projections;
   fetches = lock.entries;
 }
