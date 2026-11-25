@@ -103,3 +103,11 @@ It exposes evaluation-known `packages`, `tests`, `release` and `fetches`.
 
 The purifier idea was inspired by nixcloud's
 [cargo (libnix)](https://github.com/nixcloud/cargo).
+
+For a locked native extension project, `projections.php-extension` provides
+the installed extension and its locked module closure. Use its `php` output
+as the explicit PHP argument to a Composer project that requires the
+corresponding `ext-*` platform package. `applyTo` accepts a PHP package with
+the same unwrapped SDK derivation and composes the locked modules into its
+extension configuration. The extension and its dependencies remain the
+original PECL build outputs.
